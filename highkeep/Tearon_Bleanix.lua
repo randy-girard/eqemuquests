@@ -37,13 +37,12 @@ function event_say(e)
 			e.self:Say("Yes. This city of vices is second only to Neriak. And it is trouble with Neriak that has sent me here. In search of my peoples princess.");
 		elseif (e.message:findi("princess")) then
 			e.self:Say("The Princess Lenya Thex is the daughter of His Royal Majesty, King Tearis Thex of Felwithe. She was on her way to Qeynos when we believe she was kidnapped by Carson McCabe, the governor of this vile city. I cannot get in the guards are on to me. How do you feel about becoming a hero to the Koada'dal or as you call us, high elves.");
-		elseif (e.message:findi("want to be a hero") || e.message:findi("become a hero")) then
+		elseif (e.message:findi("want to be a hero") or e.message:findi("become a hero")) then
 			-- :: Match if faction is Amiable or better
-			if (fac <= 4) {
+			if (fac <= 4) then
 				e.self:Say("Well let's get started on making you a hero. You must take Elite Guard Bracer. Look for Princess Lenya. When you find her give her the bracer to prove you are with the Koada'dal. She should trust you then. Then return to me with Princess Lenya and return my bracer. Be safe my friend.");
 				-- :: Give item 13108 - Tearons Bracer
 				e.other:SummonItem(13108);
-				e.other:Ding();
 
 				-- :: Spawn one and only one Princess_Lenya_Thex (51176)
 				eq.spawn2(Princess_Lenya_Thex, 0, 0, -202, 85, 74, 400);

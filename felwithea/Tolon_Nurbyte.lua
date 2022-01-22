@@ -41,8 +41,10 @@ function event_say(e)
 	end
 end
 
-function event_item(e)
-	if(!eq.is_content_flag_enabled("october_1999_temple_era")) then
+function event_trade(e)
+	local item_lib = require("items");
+	
+	if(not eq.is_content_flag_enabled("october_1999_temple_era")) then
 		-- :: Match a 18841 - Sealed Letter
 		if(item_lib.check_turn_in(e.trade, {item1 = 18841})) then
 			e.self:Say("So I see you completed your mission. Good work. You just may be a member of the Silent Watch someday. Well my friend. I will be keeping my eye on you. No doubt we will meet again. Oh, I almost forgot. The Princess wanted you to have this. Now show yourself the door.");

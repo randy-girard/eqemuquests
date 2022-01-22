@@ -67,7 +67,7 @@ sub EVENT_ITEM {
 		#:: Grant a small amount of experience
 		quest::exp(100);
 		#:: Depop
-		quest::depop();
+		quest::depop(51176);
 	}
 	#:: Return unused items
 	plugin::returnUnusedItems();
